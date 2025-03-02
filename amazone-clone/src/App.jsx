@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Category from "./components/Category/Category";
 
 import "./App.css";
 import Header from "./components/Header/Header";
@@ -10,9 +11,10 @@ function App() {
 
   return (
     <>
-      <Header/>
-      <CarouselEffect/>
-    </> 
+      <Header />
+      <CarouselEffect />
+      <Category />
+    </>
   );
 }
 
