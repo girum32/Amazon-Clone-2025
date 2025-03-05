@@ -1,5 +1,6 @@
 import React from "react";
 import classes from "./Header.module.css";
+import { Link } from "react-router-dom";
 
 import { SlLocationPin } from "react-icons/sl";
 import { FaSearch } from "react-icons/fa";
@@ -14,9 +15,9 @@ function Header() {
       <section className={classes.header__container}>
         <div className={classes.logo__container}>
           {/* Logo */}
-          <a rel="stylesheet" href="">
+          <Link rel="stylesheet" to="/">
             <img src={logo} alt=" Amazon logo" />
-          </a>
+          </Link>
         </div>
         {/* Delivery */}
         <div className={classes.delivery}>
@@ -39,30 +40,30 @@ function Header() {
         </div>
         {/* right side a */}
         <div className={classes.order__container}>
-          <a href="" className={classes.language}>
+          <Link to="" className={classes.language}>
             <img src={flag} alt=" USA flag" />
             <select name="" id>
               <option value="">EN</option>
             </select>
-          </a>
+          </Link>
           {/*  Three a components */}
-          <a href=" ">
+          <Link to="/auth">
             <p>Hello, Sign In</p>
             <span>Account & Lists</span>
-          </a>
+          </Link>
           {/* orders */}
-          <a href=" ">
+          <Link to="/orders ">
             <p>Returns</p>
             <span>& Orders</span>
-          </a>
+          </Link>
           {/* Cart */}
-          <a href="" className={classes.cart}>
+          <Link to="/cart" className={classes.cart}>
             <BiCart size={35} />
             <span>0</span>
-          </a>
+          </Link>
         </div>
       </section>
-      <LowerHeader/>
+      <LowerHeader />
     </>
   );
 }

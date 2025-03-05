@@ -3,6 +3,8 @@
   width: 350px;
   background-color: white;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px; /* Space inside the card */
+  margin: 10px; /* Adds spacing outside each card */
 }
 
 .category img {
@@ -25,7 +27,7 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.category__container{
+.category__container {
   position: relative;
   margin-top: -10%;
   display: grid;
@@ -33,3 +35,28 @@
   place-items: center;
 }
 
+@media (max-width: 1024px) {
+  .category__container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .category__container .category:nth-child(4) {
+    display: none;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .category__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .category__container .category:nth-child(4) {
+    display: block;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .category__container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
