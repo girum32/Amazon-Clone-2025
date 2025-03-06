@@ -31,7 +31,12 @@ function Results() {
         <div className={classes.products__grid}>
           {results.length > 0 ? (
             results?.map((product) => (
-              <ProductCard key={product.id} product={product} />
+              <ProductCard
+                key={product.id}
+                product={product}
+                renderDesc={false}
+                renderAdd={true}
+              />
             ))
           ) : (
             <Loader />
