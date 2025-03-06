@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { baseUrl } from "../../API/endPoints";
 import ProductCard from "../../components/Product/ProductCard";
+import Loader from "../../components/Loader/Loader";
 
 function Results() {
   const [results, setResults] = useState([]);
@@ -28,9 +29,13 @@ function Results() {
         <p style={{ padding: "30px" }}>Category/{categoryName}</p>
         <hr />
         <div className={classes.products__grid}>
-          {results?.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
+          {results.length > 0 ? (
+            results?.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))
+          ) : (
+            <Loader />
+          )}
         </div>
       </section>
     </Layout>
